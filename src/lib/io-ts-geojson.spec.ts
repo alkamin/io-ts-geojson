@@ -1,3 +1,4 @@
+/* tslint:disable */
 import test from 'ava';
 import { isRight } from 'fp-ts/lib/Either';
 import * as L from './io-ts-geojson';
