@@ -27,7 +27,7 @@ export const lineString2dCodec = t.brand(
   t.array(position2dCodec),
   (
     lineString
-  ): lineString is t.Branded<[number, number][], LineString2dBrand> =>
+  ): lineString is t.Branded<Array<[number, number]>, LineString2dBrand> =>
     lineString.length >= 2,
   'LineString2d'
 );
@@ -40,7 +40,7 @@ export const linearRing2dCodec = t.brand(
   lineString2dCodec,
   (
     lineString
-  ): lineString is t.Branded<[number, number][], LinearRing2dBrand> =>
+  ): lineString is t.Branded<Array<[number, number]>, LinearRing2dBrand> =>
     lineString.length >= 4 &&
     lineString[0][0] === lineString[lineString.length - 1][0] &&
     lineString[0][1] === lineString[lineString.length - 1][1],
@@ -61,8 +61,10 @@ export const lineString3dCodec = t.brand(
   t.array(position3dCodec),
   (
     lineString
-  ): lineString is t.Branded<[number, number, number][], LineString3dBrand> =>
-    lineString.length >= 2,
+  ): lineString is t.Branded<
+    Array<[number, number, number]>,
+    LineString3dBrand
+  > => lineString.length >= 2,
   'LineString3d'
 );
 
@@ -74,7 +76,10 @@ export const linearRing3dCodec = t.brand(
   lineString3dCodec,
   (
     lineString
-  ): lineString is t.Branded<[number, number, number][], LinearRing3dBrand> =>
+  ): lineString is t.Branded<
+    Array<[number, number, number]>,
+    LinearRing3dBrand
+  > =>
     lineString.length >= 4 &&
     lineString[0][0] === lineString[lineString.length - 1][0] &&
     lineString[0][1] === lineString[lineString.length - 1][1] &&
