@@ -92,52 +92,52 @@ export type LinearRing3d = t.TypeOf<typeof linearRing2dCodec>;
 export const positionCodec = t.union([position2dCodec, position3dCodec]);
 export const lineStringCodec = t.union([lineString2dCodec, lineString3dCodec]);
 
-export const pointGeometryCodec = t.type({
-  type: t.literal('Point'),
-  coordinates: positionCodec
-});
+// export const pointGeometryCodec = t.type({
+//   type: t.literal('Point'),
+//   coordinates: positionCodec
+// });
 
-export const multiPointGeometryCodec = t.type({
-  type: t.literal('MultiPoint'),
-  coordinates: lineStringCodec
-});
+// export const multiPointGeometryCodec = t.type({
+//   type: t.literal('MultiPoint'),
+//   coordinates: lineStringCodec
+// });
 
-export const lineStringGeometryCodec = t.type({
-  type: t.literal('LineString'),
-  coordinates: lineStringCodec
-});
+// export const lineStringGeometryCodec = t.type({
+//   type: t.literal('LineString'),
+//   coordinates: lineStringCodec
+// });
 
-export const multiLineStringGeometryCodec = t.type({
-  type: t.literal('MultiLineString'),
-  coordinates: t.union([t.array(lineString2dCodec), t.array(lineString3dCodec)])
-});
+// export const multiLineStringGeometryCodec = t.type({
+//   type: t.literal('MultiLineString'),
+//   coordinates: t.union([t.array(lineString2dCodec), t.array(lineString3dCodec)])
+// });
 
-export const polygonGeometryCodec = t.type({
-  type: t.literal('Polygon'),
-  coordinates: t.union([t.array(linearRing2dCodec), t.array(linearRing3dCodec)])
-});
+// export const polygonGeometryCodec = t.type({
+//   type: t.literal('Polygon'),
+//   coordinates: t.union([t.array(linearRing2dCodec), t.array(linearRing3dCodec)])
+// });
 
-export const multiPolygonGeometryCodec = t.type({
-  type: t.literal('MultiPolygon'),
-  coordinates: t.union([
-    t.array(t.array(linearRing2dCodec)),
-    t.array(t.array(linearRing3dCodec))
-  ])
-});
+// export const multiPolygonGeometryCodec = t.type({
+//   type: t.literal('MultiPolygon'),
+//   coordinates: t.union([
+//     t.array(t.array(linearRing2dCodec)),
+//     t.array(t.array(linearRing3dCodec))
+//   ])
+// });
 
-export const geometryCodec = t.union([
-  pointGeometryCodec,
-  multiPointGeometryCodec,
-  lineStringGeometryCodec,
-  multiLineStringGeometryCodec,
-  polygonGeometryCodec,
-  multiPolygonGeometryCodec
-]);
+// export const geometryCodec = t.union([
+//   pointGeometryCodec,
+//   multiPointGeometryCodec,
+//   lineStringGeometryCodec,
+//   multiLineStringGeometryCodec,
+//   polygonGeometryCodec,
+//   multiPolygonGeometryCodec
+// ]);
 
-export const geometryCollectionCodec = t.type({
-  type: t.literal('GeometryCollection'),
-  geometries: t.array(geometryCodec)
-});
+// export const geometryCollectionCodec = t.type({
+//   type: t.literal('GeometryCollection'),
+//   geometries: t.array(geometryCodec)
+// });
 
 export type GeometryInstanceType = t.TypeOf<typeof geometryInstanceTypeCodec>;
 export type GeometryCollectionType = t.TypeOf<
@@ -145,13 +145,13 @@ export type GeometryCollectionType = t.TypeOf<
 >;
 export type GeometryType = t.TypeOf<typeof geometryTypeCodec>;
 export type Position = t.TypeOf<typeof positionCodec>;
-export type PointGeometry = t.TypeOf<typeof pointGeometryCodec>;
-export type MultiPointGeometry = t.TypeOf<typeof multiPointGeometryCodec>;
-export type LineStringGeometry = t.TypeOf<typeof lineStringGeometryCodec>;
-export type PolygonGeometry = t.TypeOf<typeof polygonGeometryCodec>;
-export type MultiLineStringGeometry = t.TypeOf<
-  typeof multiLineStringGeometryCodec
->;
-export type MultiPolygonGeometry = t.TypeOf<typeof multiPolygonGeometryCodec>;
-export type Geometry = t.TypeOf<typeof geometryCodec>;
-export type GeometryCollection = t.TypeOf<typeof geometryCollectionCodec>;
+// export type Geometry = t.TypeOf<typeof geometryCodec>;
+// export type GeometryCollection = t.TypeOf<typeof geometryCollectionCodec>;
+// export type PointGeometry = t.TypeOf<typeof pointGeometryCodec>;
+// export type MultiPointGeometry = t.TypeOf<typeof multiPointGeometryCodec>;
+// export type LineStringGeometry = t.TypeOf<typeof lineStringGeometryCodec>;
+// export type PolygonGeometry = t.TypeOf<typeof polygonGeometryCodec>;
+// export type MultiLineStringGeometry = t.TypeOf<
+//   typeof multiLineStringGeometryCodec
+// >;
+// export type MultiPolygonGeometry = t.TypeOf<typeof multiPolygonGeometryCodec>;
