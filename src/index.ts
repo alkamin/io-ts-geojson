@@ -1,1 +1,2 @@
-export * from './lib/io-ts-geojson';
+import * as coordinates from './lib/coordinates';
+export { coordinates };
