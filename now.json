@@ -1,0 +1,4 @@
+{
+  "builds": [{ "src": "build/docs/**", "use": "@now/static" }],
+  "routes": [{ "src": "/(.*)", "dest": "build/docs/$1" }]
+}
