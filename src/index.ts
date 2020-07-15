@@ -1,2 +1,3 @@
 import * as coordinates from './lib/coordinates';
-export { coordinates };
+import * as geometry from './lib/geometry';
+export { coordinates, geometry };
